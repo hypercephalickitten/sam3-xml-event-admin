@@ -2,12 +2,12 @@
 Administrate your Serious Sam 3 server through in-game chat
 
 # What it does
-This is a simple Lua script that listens for XML_Log events on your Serious Sam 3 dedicated server and runs certains actions on them. I examines `<chat>` messages for server commands and uses the `<playerjoined>` and `<playerleft>` XML messages are used to keep track of connected players. By typing a pre-defined command into the in-game chat you can perform certain actions like changing the map or kicking a player.
+sam3-xml-event-admin is a simple Lua script that listens for XML_Log events on your Serious Sam 3 dedicated server and runs certains actions on them. It examines `<chat>` messages for server commands and uses the `<playerjoined>` and `<playerleft>` XML messages to keep track of connected players. By typing a pre-defined command into the in-game chat you can perform various actions like changing the map or kicking a player.
 
 # How to use it and available commands
 Just open the chat (default 'y') and enter a command (prefixed with a dot). The following ones are currently implemented:
 
-* `.kick` - calls gamKickByIndex() or gamKickByName() depending on whether `.kick` is followed by digits or a string. Examples: `.kick 7` kicks player with index 7 (see `gamListPlayers()` for the actual index number), `kick hans` kicks the player whose name begins with hans (case doesn't matter), e.g. Hans or hanswurst.
+* `.kick` - calls gamKickByIndex() or gamKickByName() depending on whether `.kick` is followed by digits or a string. Examples: `.kick 7` kicks player with index 7 (see `gamListPlayers()` for the actual index number), `.kick hans` kicks the player whose name begins with hans (case doesn't matter), e.g. Hans or hanswurst.
 * `.ban` - calls gameBanByIndex() or gameBanByName, see above for details, and additionally kicks targeted player.
       
 * `.pass` - calls samVotePass() - forces the current vote to pass
